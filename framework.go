@@ -26,7 +26,7 @@ type Server struct {
 	services any
 }
 
-func NewConfig(config *Config) *Server {
+func NewServer(config *Config) *Server {
 	engine := gin.Default()
 
 	server := &Server{
