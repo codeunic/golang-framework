@@ -34,8 +34,8 @@ type QueryBuilder struct {
 	joins      []Join
 	groupBy    []string
 	order      string
-	limit      int
-	offset     int
+	limit      int64
+	offset     int64
 	tx         *sql.Tx
 }
 
@@ -75,12 +75,12 @@ func (qb *QueryBuilder) Order(order string) *QueryBuilder {
 	return qb
 }
 
-func (qb *QueryBuilder) Limit(limit int) *QueryBuilder {
+func (qb *QueryBuilder) Limit(limit int64) *QueryBuilder {
 	qb.limit = limit
 	return qb
 }
 
-func (qb *QueryBuilder) Offset(offset int) *QueryBuilder {
+func (qb *QueryBuilder) Offset(offset int64) *QueryBuilder {
 	qb.offset = offset
 	return qb
 }
